@@ -1,0 +1,12 @@
+clc;
+clear all;
+close all;
+mkdir('Images');
+obj = videoinput('winvideo',1);
+start(obj);
+for i = 1:10
+
+   Input = getsnapshot(obj);
+   imwrite(Input,['Images\' num2str(i) '.jpg']);
+end
+stop(obj);
